@@ -772,7 +772,7 @@ public final class BlockchainProcessorImpl implements BlockchainProcessor {
   }
   
   private void checkDatabaseState() {
-    logger.info("Checking database state...");
+    logger.info("Checking the database state...");
     long totalMined = 0;
     
     for (int i=0; i <= blockchain.getHeight(); i++) {
@@ -783,10 +783,9 @@ public final class BlockchainProcessorImpl implements BlockchainProcessor {
     for (Escrow escrow : escrowService.getAllEscrowTransactions()) {
       totalEffectiveBalance += escrow.getAmountNQT();
     }
-    
-    logger.info("Total mined {}, total effective on wallets {}", totalMined, totalEffectiveBalance);
-    
+        
     if(totalEffectiveBalance > totalMined) {
+      logger.info("Total mined {}, total effective on wallets {}", totalMined, totalEffectiveBalance);
       logger.info("Database is inconsistent, please sync from empty. Alternatively, pop off some blocks or add '{} = true' at your own risk.", Props.DB_SKIP_CHECK.getName());
       System.exit(-1);
     }
