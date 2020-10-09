@@ -12,6 +12,12 @@ This wallet version is developed and maintained by the Burst Apps Team (BAT). Th
 
 - MariaDB (recommended)
 - H2 (embedded, easier install)
+## Burst Busters edit
+
+- Created docker file with mock mining enabled.
+    - BRS node will accept any deadline and will forge a new block.
+    - Blockchain will start from the genesis block (0), so AT (smart contracts) are not available (they are added latter by HF) and other features added by other HF.
+
 
 ## Network Features
 

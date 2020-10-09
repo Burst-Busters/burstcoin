@@ -1,0 +1,37 @@
+#### PEER 2 PEER NETWORKING ####
+
+# Announce my IP address/hostname to peers and allow them to share it with other peers.
+# If disabled, peer networking servlet will not be started at all.
+P2P.shareMyAddress = no
+
+JETTY.P2P.DoSFilter = off
+
+#### API SERVER ####
+API.Listen = 0.0.0.0
+API.allowed = *
+
+#### DATABASE ####
+
+# Database connection JDBC url
+# Append ;AUTO_SERVER=TRUE to enable automatic mixed mode access.
+DB.Url=jdbc:h2:file:/db/burst;DB_CLOSE_ON_EXIT=FALSE
+DB.Username=
+DB.Password=
+
+#### DEVELOPMENT ####
+# (mere mortals do not need to look beyond this point)
+
+# Set to "yes" to run offline - do not connect to peers and do not listen for incoming peer
+# connections. This is equivalent to setting brs.shareMyAddress = no, brs.wellKnownPeers = ,
+# DEV.P2P.BootstrapPeers = and brs.usePeersDb = no, and if set to "yes" overrides those properties.
+DEV.Offline = yes
+
+# Use testnet, leave set to false unless you are really testing.
+# Never unlock your real accounts on testnet! Use separate accounts for testing only.
+# When using testnet, P2P port is hardcoded as 7123.
+DEV.TestNet = yes
+
+# Force all deadlines submitted to actually be a certain deadline.
+# This will mess up syncing with other wallets, so please only use in offline mode.
+DEV.mockMining = yes
+DEV.mockMining.deadline = 0
