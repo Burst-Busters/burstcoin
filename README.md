@@ -17,6 +17,8 @@ This wallet version is developed and maintained by the Burst Apps Team (BAT). Th
 - Created docker file with mock mining enabled.
     - BRS node will accept any deadline and will forge a new block.
     - Blockchain will start from the genesis block (0), so AT (smart contracts) are not available (they are added latter by HF) and other features added by other HF.
+    - You need to "open" 6876 port then running images
+    - Image hosted here: docker.io/shefass/burstmockmining
 
 
 ## Network Features
